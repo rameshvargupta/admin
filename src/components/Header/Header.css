@@ -1,0 +1,168 @@
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+header .logo {
+    width: 45px;
+    text-decoration: none;
+}
+
+header .logo span {
+    color: #292929;
+    font-weight: 800;
+    font-size: 25px;
+    margin-left: 7px !important;
+    text-transform: uppercase;
+}
+
+header .rounded-circle {
+    min-width: 45px !important;
+    height: 45px !important;
+    width: 45px !important;
+    background-color: #f0f5ff;
+    color: #292929;
+    margin-right: 10px !important;
+}
+
+header .rounded-circle:hover {
+    color: blue;
+
+    & svg {
+        color: blue !important;
+        transition: 0.5s !important;
+
+    }
+
+
+}
+
+.myAcc {
+    color: #292929 !important;
+    text-transform: capitalize !important;
+    text-align: left;
+}
+
+.userImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border: 2px solid blue;
+    border-radius: 100%;
+    cursor: pointer;
+
+}
+
+.userImg .userLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    position: relative;
+}
+
+.userImg .userLogo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.myAcc .userInfo {
+    margin-left: 8px !important;
+
+    & h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 0px;
+    }
+
+    & p {
+        margin: 0px;
+        font-size: 13px;
+        opacity: 0.5;
+        color: #292929;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 3px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0858f7 !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}
+
+.dropdown-list {
+
+    & li {
+        margin-bottom: 3px !important;
+    }
+
+    & li.MuiButtonBase-root {
+        background-color: #ebf6ff !important;
+        color: #292929;
+        padding: 10px 15px !important;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    & li.MuiButtonBase-root:hover {
+        background-color: #cee5fa !important;
+    }
+
+    & .notificationSlider {
+        height: auto;
+        width: 300px !important;
+        max-height: 400px !important;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .btnBlue {
+        background-color: #0858f7;
+        color: white !important;
+        text-transform: capitalize;
+        font-size: 15px;
+        width: 100%;
+        font-weight: 600;
+    }
+}
+
+.dropDownInfo {
+    padding-left: 15px;
+
+    & h4 {
+        font-size: 14px;
+        font-weight: 400;
+        white-space: break-spaces;
+        line-height: 21px;
+    }
+
+    & p {
+        font-size: 12px !important;
+        font-weight: 600;
+        margin-top: 0px !important;
+    }
+
+    & .textSky {
+        color: blue;
+    }
+}

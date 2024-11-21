@@ -1,0 +1,157 @@
+.sidebar ul {
+    padding: 10px 15px !important;
+    margin-bottom: 0px;
+}
+
+.sidebar ul li {
+    list-style: none;
+    margin: 0px !important;
+
+}
+
+.sidebar ul li button {
+    color: #000;
+    text-align: left;
+    justify-content: left;
+    border-radius: 8px !important;
+    padding: 12px 8px !important;
+    align-items: center;
+    text-transform: capitalize;
+    font-family: 600 !important;
+    font-size: 15px !important;
+    font-family: "Open Sans", sans-serif !important;
+
+}
+
+.sidebar ul li button:hover {
+    background-color: #f1f1f1 !important;
+}
+
+.sidebar ul li .active {
+    background-color: #f1f1f1 !important;
+}
+.sidebar ul li .active .arrow{
+    transform: rotate(90deg);
+}
+
+.sidebar ul li button .logoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px !important;
+}
+
+.sidebar ul li button .logoIcon svg {
+    color: #000;
+    opacity: 0.8;
+    font-size: 20px !important;
+}
+
+.sidebar ul li button .arrow {
+    margin-left: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li .subMenu {
+    padding: 0px 45px !important;
+    position: relative;
+
+}
+
+.sidebar ul li .subMenu::before {
+    content: '';
+    width: 1px;
+    height: 80%;
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.sidebar ul li .subMenu li {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li .subMenu li a {
+    color: #5e5e5e !important;
+    text-decoration: none !important;
+    display: block;
+    padding: 6px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.8 ease-in-out;
+
+}
+
+.sidebar ul li .subMenu li a:hover {
+    color: #0858f7 !important;
+}
+
+.sidebar ul li .hideSubMenu {
+    height: 0px;
+    opacity: 0;
+}
+
+.sidebar ul li .showSubMenu {
+    height: auto;
+    opacity: 1;
+
+}
+
+.sidebar .logOutWrapper{
+    padding: 0px 25px;
+}
+.sidebar .logOutWrapper .logOutBox {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bcd2fd;
+    position: relative;
+    overflow: hidden;
+}
+.sidebar .logOutWrapper .logOutBox::before{
+    content: "";
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    opacity: 0.5;
+    background-color:#0858f7;
+}
+.sidebar .logOutWrapper .logOutBox::after{
+    content: "";
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    position: absolute;
+    top: 40px;
+    left: 12px;
+    opacity: 0.5;
+    background-color:#0858f7;
+}
+
+    
+.sidebar .logOutWrapper .logOutBox button{
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sidebar .logOutWrapper .logOutBox button svg{
+font-size: 20px;
+margin-right: 5px !important;
+color: #fff !important;
+}

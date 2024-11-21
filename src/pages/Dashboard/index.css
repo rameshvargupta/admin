@@ -1,0 +1,158 @@
+.right-content {
+    padding: 25px 15px;
+}
+
+.right-content .dashboardBoxWrapper {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.right-content .dashboardBoxWrapper .dashboardBoxSection {
+    width: 48%;
+    height: 160px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.right-content .grophBox {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-image: linear-gradient(#15a0b5, #2a6ff7);
+}
+
+.grophBox h4 {
+    font-size: 18px !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.grophBox .toggleIcon {
+    font-size: 20px;
+    color: rgba(0, 0, 0, .3);
+    cursor: pointer;
+    min-width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+}
+
+.right-content .toggleIcon svg {
+    font-size: 25px;
+    opacity: 0.7;
+    color: #fff !important;
+}
+
+.grophBox h3 {
+    font-weight: bold;
+}
+
+.grophBox p {
+    font-size: 15px;
+    opacity: 0.7;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+
+.right-content .cardDetails {
+    margin: 20px 12px !important;
+    border-radius: 10px !important;
+}
+
+.right-content .cardDetails h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #403e57 !important;
+}
+
+.right-content .cardDetails .cardFilter h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #403e57 !important;
+    margin-bottom: 7px !important;
+}
+
+.right-content .table th {
+    background-color: #2a6ff7 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    font-size: 14px;
+    text-align: center;
+}
+
+.right-content .table tbody td {
+    font-size: 14px !important;
+    font-weight: 500;
+    color: #403e57;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.right-content .table tbody button {
+    min-width: 38px !important;
+    height: 32px !important;
+    width: 32px !important;
+    margin: 0px 3px !important;
+}
+
+.right-content .table tbody .secondary {
+    background: rgba(203, 60, 231, 0.2);
+}
+
+.right-content .table tbody .success {
+    background: rgba(26, 159, 83, 0.2);
+}
+
+.right-content .table tbody .error {
+    background: rgba(241, 17, 51, 0.2);
+}
+
+.right-content .table tbody button svg {
+    font-size: 30px !important;
+}
+
+.right-content .table tbody .oldPrice,
+.right-content .table tbody .newPrice {
+    width: 100%;
+    display: block !important;
+}
+
+.right-content .table tbody .newPrice {
+    color: #ff6179 !important;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.right-content .table tbody .imageInfo h6 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500px;
+    margin-bottom: 5px !important;
+}
+
+.right-content .table tbody .imageInfo img {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.right-content .table tbody .imageInfo .imgDetails {
+    margin-left: 10px !important;
+    text-align: left;
+}
+
+.right-content .peginationSection {
+    padding: 10px 0px !important;
+
+    & div {
+        margin-left: auto !important;
+    }
+}

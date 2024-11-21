@@ -1,0 +1,65 @@
+.dashboardBoxSection {
+    display: flex;
+    justify-content: center;
+    padding: 20px 35px;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    position: relative;
+    color: #fff !important;
+    text-transform: capitalize !important;
+    font-family: 600;
+
+    & .col1 h4 {
+        font-size: 18px;
+    }
+
+    & .col1 .user {
+        font-size: 40px;
+        font-weight: bolder;
+    }
+
+    & .col2 .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 10px;
+        background-image: linear-gradient(to bottom right, rgba(0, 0, 0, .2), rgba(0, 0, 0, .3));
+    }
+
+    & .col2 svg {
+        font-size: 35px;
+        opacity: 0.4;
+        color: #fff;
+    }
+
+}
+
+.dashboardBoxSection .toggleIcon {
+    font-size: 20px;
+    color: rgba(0, 0, 0, .3);
+    cursor: pointer;
+    min-width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+}
+
+.dashboardBoxSection .bottomElem {
+    position: relative;
+    top: 15px;
+}
+
+.dashboardBoxSection .chart {
+    position: absolute;
+    bottom: 00px;
+    left: 60px !important;
+    z-index: 100;
+    opacity: 0.05;
+}
+
+.dashboardBoxSection .chart svg {
+    font-size: 180px !important;
+    color: #000;
+}
