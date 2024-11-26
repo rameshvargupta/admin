@@ -11,6 +11,10 @@ header {
     backdrop-filter: blur(5px);
 }
 
+body.dark header {
+    background: #112143 !important;
+}
+
 header .logo {
     width: 45px;
     text-decoration: none;
@@ -24,6 +28,14 @@ header .logo span {
     text-transform: uppercase;
 }
 
+body.dark header .logo span {
+    color: #fff;
+}
+
+header .part2 {
+    padding-left: 50px !important;
+}
+
 header .rounded-circle {
     min-width: 45px !important;
     height: 45px !important;
@@ -31,6 +43,18 @@ header .rounded-circle {
     background-color: #f0f5ff;
     color: #292929;
     margin-right: 10px !important;
+}
+
+body.dark header .rounded-circle {
+    color: #fff !important;
+}
+
+body.dark header .rounded-circle {
+    background-color: #2b50a0 !important;
+}
+
+body.dark header .rounded-circle svg {
+    color: #fff !important;
 }
 
 header .rounded-circle:hover {
@@ -62,6 +86,28 @@ header .rounded-circle:hover {
     border-radius: 100%;
     cursor: pointer;
 
+}
+
+.bigImg {
+    width: 80px !important;
+    height: 80px !important;
+
+    & img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+}
+
+body.dark .userImg {
+    border: 2px solid #fff !important;
+
+}
+
+body.dark .myAcc,
+body.dark .myAcc .userInfo p {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .userImg .userLogo {
@@ -98,6 +144,10 @@ header .rounded-circle:hover {
     }
 }
 
+body.dark ::-webkit-scrollbar-thumb {
+    background-color: #fff !important;
+}
+
 ::-webkit-scrollbar {
     width: 3px !important;
 }
@@ -108,6 +158,21 @@ header .rounded-circle:hover {
 
 ::-webkit-scrollbar-track {
     background-color: transparent !important;
+}
+
+body.dark .MuiPaper-elevation,
+body.dark .myAccWrapper svg,
+body.dark .dropdown-list li.MuiButtonBase-root {
+    background-color: #12254e !important;
+    color: #fff !important;
+}
+
+body.dark .MuiPaper-elevation li * {
+    color: #fff !important;
+}
+
+body.dark li.MuiButtonBase-root:hover {
+    background-color: #2b50a0 !important;
 }
 
 .dropdown-list {

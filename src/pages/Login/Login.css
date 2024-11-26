@@ -1,0 +1,132 @@
+.loginSection {
+    margin-top: 50px !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+}
+
+.loginSection .loginBox {
+    width: 350px !important;
+    height: auto !important;
+
+    & .logoSign {
+        margin-bottom: 20px !important;
+        
+    }
+    & h5{
+        font-weight: bold !important;
+        font-size: 20px !important;
+        padding-top: 3px !important;
+    }
+}
+
+.loginSection .loginBox .wrapperSection {
+    height: auto !important;
+    width: 100%;
+    border-radius: 10px !important;
+    margin-top: 10px !important;
+    padding: 30px !important;
+    background-color: #ccc !important;
+}
+
+.loginSection .loginBox .wrapperSection .form-control {
+    background: #fff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 5px;
+    padding-left: 35px;
+    height: 43px !important;
+    box-shadow: none !important;
+    outline: none !important;
+
+}
+
+.loginSection .loginBox .wrapperSection .form-group {
+    margin-bottom: 18px !important;
+}
+
+/* .loginSection .loginBox .wrapperSection .form-group.focus .formIcon svg {
+    border: 1px solid #0858f7 !important;
+}
+
+.loginSection .loginBox .wrapperSection .form-control:focus {
+    border: 1px solid #0858f7 !important;
+
+} */
+
+.loginSection .loginBox .wrapperSection .formIcon {
+    position: absolute;
+    top: 9px;
+    left: 9px !important;
+
+    & svg {
+        font-size: 20px !important;
+        color: #5e5d72 !important;
+    }
+}
+
+.loginSection .loginBox .wrapperSection .eyeIcon {
+    position: absolute;
+    top: 9px;
+    right: 10px !important;
+    cursor: pointer;
+
+    & svg {
+        font-size: 22px !important;
+        color: #5e5d72 !important;
+    }
+}
+
+.loginSection .loginBox .forgotPassword {
+    color: #5e5d72;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px !important;
+    transition: 0.3s;
+}
+
+.loginSection .loginBox .forgotPassword:hover {
+    color: #0858f7 !important;
+}
+
+.loginSection .loginBox span.line {
+    width: 35%;
+    height: 1px !important;
+    display: block;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.loginSection .loginBox .txtOr {
+    height: 40px !important;
+    width: 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 50%;
+    font-size: 16px !important;
+    font-weight: 500;
+}
+
+
+
+.SignGoogle {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-transform: capitalize !important;
+
+    & img {
+        width: 30px !important;
+        margin-right: 5px !important;
+    }
+}
+
+.loginSection .linkColor {
+    text-decoration: none;
+    font-size: 17px !important;
+    font-weight: bold;
+}
+
+.loginSection .linkColor:hover {
+    color: #0858f7 !important;
+}

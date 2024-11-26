@@ -3,27 +3,66 @@ import './App.css';
 import { Header } from './components/Header/Header';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import DashBoard from './pages/Dashboard';
+import { createContext, useEffect, useState } from 'react';
+import { Login } from './pages/Login/Login';
+import { SignUp } from './pages/SignUp/SignUp';
+import { ProductDetails } from './pages/ProductDetails/ProductDetails';
+
+
+const MyContext = createContext();
 
 function App() {
+  const [isSidebarToggle, setIsSidebarToggle] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [isHideHeaderandSidebar, setisHideHeaderandSidebar] = useState(false);
+  const [themeMode, setThemeMode] = useState(true);
+
+  useEffect(() => {
+    if (themeMode === true) {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+      localStorage.setItem("themeMode", "light");
+    }
+    else {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+      localStorage.setItem("themeMode", "dark");
+    }
+  })
+
+  const value = {
+    isSidebarToggle, setIsSidebarToggle, isLogin, setIsLogin, isHideHeaderandSidebar, setisHideHeaderandSidebar, themeMode, setThemeMode
+  }
+
   return (
     <BrowserRouter>
-      <Header />
+      <MyContext.Provider value={value}>
 
-      <div className='main d-flex'>
-        <div className='sideWrapper'>
-          <Sidebar />
+        {isHideHeaderandSidebar !== true &&
+          <Header />}
+
+
+        <div className='main d-flex'>
+          {isHideHeaderandSidebar !== true &&
+            <div className={`sideWrapper ${isSidebarToggle === true ? "toggleWrapper" : ""}`}>
+              <Sidebar />
+            </div>}
+
+
+          <div className={`content ${isHideHeaderandSidebar === true ? "fullPage" : ""} ${isSidebarToggle === true === true ? "toggleWrapper" : ""}`}>
+            <Routes>
+              <Route path='/' element={<DashBoard />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signUp' element={<SignUp />} />
+              <Route path='/productDetails' element={<ProductDetails />} />
+            </Routes>
+          </div>
+
         </div>
 
-        <div className='content'>
-          <Routes>
-            <Route path='/' element={<DashBoard />} />
-          </Routes>
-        </div>
-
-      </div>
-
+      </MyContext.Provider>
     </BrowserRouter>
   );
 }
-
+export { MyContext }
 export default App;

@@ -5,13 +5,18 @@
     border-radius: 6px;
     padding: 3px 15px;
 }
-
+body.dark .searchBox{
+    background-color: #12254e !important;
+}
 .searchBox input {
     background-color: transparent;
     outline: none;
     border: 0px;
     font-size: 16px;
     color: #292929;
+}
+body.dark .searchBox input, body.dark .searchBox .searchIcon svg, body.dark .searchBox input::-webkit-input-placeholder{
+    color: rgba(255,255,255,0.8) !important;
 }
 .searchBox .searchIcon{
     margin-right: 5px !important;

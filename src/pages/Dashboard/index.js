@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './index.css'
 import DashBoardBox from "./components";
 import { FaUserCircle } from "react-icons/fa";
@@ -18,6 +18,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Rating from '@mui/material/Rating';
 import Pagination from '@mui/material/Pagination';
+import { MyContext } from "../../App";
+import { Link } from "react-router-dom";
 
 
 export const data = [
@@ -41,7 +43,6 @@ const DashBoard = () => {
   const [showBy, setshowBy] = useState('');
   const [categoryBy, setcategoryBy] = useState('');
 
-
   const ITEM_HEIGHT = 48;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -51,6 +52,13 @@ const DashBoard = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const context = useContext(MyContext);
+
+  useEffect(() => {
+    context.setisHideHeaderandSidebar(false);
+    window.scroll(0, 0)
+  }, [])
+
   return (
 
 
@@ -124,10 +132,12 @@ const DashBoard = () => {
               </span>
             </div>
           </div>
+
+
         </div>
 
 
-        <div className="cardDetails shadow border-0 p-3 mt-3">
+        <div className="cardDetails shadow border-0 p-4 mt-3">
           <h3 >Best Selling Product</h3>
 
 
@@ -137,7 +147,7 @@ const DashBoard = () => {
               <FormControl className="w-100" size="small">
                 <Select
                   value={showBy}
-                  className="w-100"
+                  className="w-100 selectSection"
                   onChange={(e) => setshowBy(e.target.value)}
                   displayEmpty
                   inputProps={{ 'aria-label': 'Without label' }}
@@ -157,7 +167,7 @@ const DashBoard = () => {
               <FormControl size="small" className="w-100">
                 <Select
                   value={categoryBy}
-                  className="w-100"
+                  className="w-100 selectSection"
                   onChange={(e) => setcategoryBy(e.target.value)}
                   displayEmpty
                   inputProps={{ 'aria-label': 'Without label' }}
@@ -221,7 +231,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                   <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -257,7 +267,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -293,7 +303,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -329,7 +339,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -365,7 +375,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -401,7 +411,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -437,7 +447,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -473,7 +483,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                    <Button className="secondary" color="secondary"><IoMdEye /></Button>
+                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -488,7 +498,8 @@ const DashBoard = () => {
 
       </div>
 
-      <div className="peginationSection d-flex justify-space-between">
+      <div className="peginationSection d-flex justify-space-between align-items-center">
+        <p >show <b>12</b> of <b>20</b> result</p>
         <div><Pagination count={10} color="primary" showFirstButton showLastButton /></div>
       </div>
     </div>

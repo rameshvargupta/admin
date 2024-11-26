@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import mainLogo from '../../assets/images/dashbord logo.png';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { Button } from '@mui/material';
-import SearchBox from '../../assets/images/SearchBox/SearchBox';
+import SearchBox from '../SearchBox/SearchBox';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -16,14 +16,21 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import LockResetOutlinedIcon from '@mui/icons-material/LockResetOutlined';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Logout from '@mui/icons-material/Logout';
+import { MyContext } from '../../App';
+import MenuIcon from '@mui/icons-material/Menu';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { UserAvatarImg, UserImg } from '../UserAvatarImg/UserAvatarImg';
+
 
 export const Header = () => {
 
-    const [profileAnchorEl, setProfileAnchorEl] = React.useState(null);
-    const [notificationAnchorEl, setNotificationAnchorEl] = React.useState(null);
+    const [profileAnchorEl, setProfileAnchorEl] = useState(null);
+    const [notificationAnchorEl, setNotificationAnchorEl] = useState(null);
 
     const profileOpen = Boolean(profileAnchorEl);
     const notificationOpen = Boolean(notificationAnchorEl);
+
+    const context = useContext(MyContext);
 
     // Handlers for profile menu
     const handleOpenProfile = (event) => {
@@ -53,14 +60,15 @@ export const Header = () => {
                     </div>
 
                     <div className='col-sm-3 d-flex align-items-center part2 '>
-                        <Button className='rounded-circle '>
-                            <MenuOpenIcon />
+                        <Button className='rounded-circle ' onClick={() => context.setIsSidebarToggle(!context.isSidebarToggle)}>
+                            {context.isSidebarToggle === true ? <MenuIcon /> : <MenuOpenIcon />}
+
                         </Button>
                         <SearchBox />
                     </div>
 
                     <div className='col-sm-7 d-flex align-items-center part3 justify-content-end'>
-                        <Button className='rounded-circle'><LightModeIcon /></Button>
+                        <Button onClick={() => context.setThemeMode(!context.themeMode)} className='rounded-circle'>{!context.themeMode == false ? <LightModeIcon /> : <DarkModeIcon />}</Button>
                         <Button className='rounded-circle'><ShoppingCartOutlinedIcon /></Button>
                         <Button className='rounded-circle'><EmailOutlinedIcon /></Button>
 
@@ -220,46 +228,48 @@ export const Header = () => {
                             </Menu>
                         </div>
 
-                        {/* Profile button */}
-                        <div className='myAccWrapper'>
-                            <Button onClick={handleOpenProfile} className='myAcc d-flex align-items-center'>
-                                <div className='userImg'>
-                                    <span className='userLogo'>
-                                        <img src={userlogo} alt="User Logo" />
-                                    </span>
-                                </div>
-                                <div className='userInfo'>
-                                    <h4>Rameshvar Gupta</h4>
-                                    <p>rameshvar@gmail.com</p>
-                                </div>
-                            </Button>
+                        {context.isLogin !== true ?
+                            <Link to={'/login'}> <Button className='btn-blue btn-lg'>Sign In</Button></Link>
+                            :
+                            < div className='myAccWrapper'>
+                                <Button onClick={handleOpenProfile} className='myAcc d-flex align-items-center'>
+                                    <UserAvatarImg />
+                                    <div className='userInfo'>
+                                        <h4>Rameshvar Gupta</h4>
+                                        <p>rameshvar@gmail.com</p>
+                                    </div>
+                                </Button>
 
-                            {/* Profile dropdown menu */}
-                            <Menu
-                                anchorEl={profileAnchorEl}
-                                id="account-menu"
-                                open={profileOpen}
-                                onClose={handleCloseProfile}
-                                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                            >
-                                <MenuItem onClick={handleCloseProfile}>
-                                    <ListItemIcon><PersonAdd fontSize="small" /></ListItemIcon>
-                                    My Account
-                                </MenuItem>
-                                <MenuItem onClick={handleCloseProfile}>
-                                    <ListItemIcon><LockResetOutlinedIcon fontSize="small" /></ListItemIcon>
-                                    Reset Password
-                                </MenuItem>
-                                <MenuItem onClick={handleCloseProfile}>
-                                    <ListItemIcon><Logout fontSize="small" /></ListItemIcon>
-                                    Logout
-                                </MenuItem>
-                            </Menu>
-                        </div>
+
+                                <Menu
+                                    anchorEl={profileAnchorEl}
+                                    id="account-menu"
+                                    open={profileOpen}
+                                    onClose={handleCloseProfile}
+                                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                >
+                                    <MenuItem onClick={handleCloseProfile}>
+                                        <ListItemIcon><PersonAdd fontSize="small" /></ListItemIcon>
+                                        My Account
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseProfile}>
+                                        <ListItemIcon><LockResetOutlinedIcon fontSize="small" /></ListItemIcon>
+                                        Reset Password
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseProfile}>
+                                        <ListItemIcon><Logout fontSize="small" /></ListItemIcon>
+                                        Logout
+                                    </MenuItem>
+                                </Menu>
+                            </div>
+                        }
+
+
+
                     </div>
                 </div>
             </div>
-        </header>
+        </header >
     );
 }
