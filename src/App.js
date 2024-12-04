@@ -7,6 +7,8 @@ import { createContext, useEffect, useState } from 'react';
 import { Login } from './pages/Login/Login';
 import { SignUp } from './pages/SignUp/SignUp';
 import { ProductDetails } from './pages/ProductDetails/ProductDetails';
+import { ProductUpload } from './pages/ProductUpload/ProductUpload';
+import { Products } from './pages/Products/Products';
 
 
 const MyContext = createContext();
@@ -54,7 +56,9 @@ function App() {
               <Route path='/' element={<DashBoard />} />
               <Route path='/login' element={<Login />} />
               <Route path='/signUp' element={<SignUp />} />
-              <Route path='/productDetails' element={<ProductDetails />} />
+              <Route path='/products' element={<Products />} />
+              <Route path='/product/details' element={<ProductDetails />} />
+              <Route path='/product/upload' element={<ProductUpload />} />
             </Routes>
           </div>
 

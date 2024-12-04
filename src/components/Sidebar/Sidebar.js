@@ -38,9 +38,9 @@ export const Sidebar = () => {
                     </Button>
                     <div className={`subMenuWrapper ${activeTab == 1 && subMenu === true ? "showSubMenu" : "hideSubMenu"}`}>
                         <ul className='subMenu'>
-                            <li><Link to={'/'}>Product List</Link></li>
-                            <li><Link to={'/'}>Product View</Link></li>
-                            <li><Link to={'/'}>Product Upload</Link></li>
+                            <li><Link to={'/products'}>Product List</Link></li>
+                            <li><Link to={'/product/details'}>Product View</Link></li>
+                            <li><Link to={'/product/upload'}>Product Upload</Link></li>
                         </ul>
                     </div>
                 </li>
@@ -126,10 +126,10 @@ export const Sidebar = () => {
                 {/* extra sidebar for testing purpose end*/}
 
             </ul>
-            <br/>
+            <br />
             <div className='logOutWrapper'>
                 <div className='logOutBox'>
-                   <Button variant='contained'> <IoMdLogOut/> LogOut</Button>
+                    <Button variant='contained'> <IoMdLogOut /> LogOut</Button>
                 </div>
             </div>
         </div>

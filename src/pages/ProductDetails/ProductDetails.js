@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useRef } from 'react'
 import './ProductDetails.css';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import HomeIcon from '@mui/icons-material/Home';
@@ -23,10 +23,17 @@ import { UserAvatarImg, UserImg } from '../../components/UserAvatarImg/UserAvata
 import Rating from '@mui/material/Rating';
 import { Button } from '@mui/material';
 import { FaReply } from "react-icons/fa";
+import { MyContext } from '../../App';
 
 
 export const ProductDetails = () => {
 
+    const productSliderBig = useRef();
+    const productSliderSml = useRef();
+    const goToSlide = (index) => {
+        productSliderBig.current.slickGoTo(index);
+        productSliderSml.current.slickGoTo(index);
+    }
 
     var productDetailsBigImg = {
         dots: false,
@@ -46,16 +53,19 @@ export const ProductDetails = () => {
         arrows: false
     };
 
+    const context = useContext(MyContext);
     const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-        const backgroundColor =
-            theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[800];
+
+        const isLightMode = context.themeMode; // Assuming `themeMode` is true for light mode
+        const backgroundColor = isLightMode ? theme.palette.grey[100] : "#071739";
+        const textColor = isLightMode ? theme.palette.text.primary : theme.palette.text.secondary;
+
         return {
             backgroundColor,
             height: theme.spacing(3),
             color: theme.palette.text.primary,
             fontWeight: theme.typography.fontWeightRegular,
+            padding: '7px 8px',
             '&:hover, &:focus': {
                 backgroundColor: emphasize(backgroundColor, 0.06),
             },
@@ -79,7 +89,8 @@ export const ProductDetails = () => {
                             component="a"
                             href="#"
                             label="Home"
-                            icon={<HomeIcon fontSize="small" />}
+                            icon={<HomeIcon fontSize="small" />
+                            }
                         />
                         <StyledBreadcrumb component="a" href="#" label="Products" />
                         <StyledBreadcrumb component="a" href="#" label="Products View" />
@@ -94,26 +105,56 @@ export const ProductDetails = () => {
                         <div className='col-md-5'>
                             <div className='sliderWrapper py-3 px-4'>
                                 <h5 className='mb-4'>Product Gallery</h5>
-                                <Slider {...productDetailsBigImg} className='sliderBig mb-2'>
+                                <Slider {...productDetailsBigImg} ref={productSliderBig} className='sliderBig mb-2'>
+                                    <div className='item'>
+                                        <img src={productDetailsImg1} className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src={productDetailsImg1} className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src={productDetailsImg1} className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src={productDetailsImg1} className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src={productDetailsImg1} className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src={productDetailsImg1} className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src={productDetailsImg1} className='w-100' />
+                                    </div>
                                     <div className='item'>
                                         <img src={productDetailsImg1} className='w-100' />
                                     </div>
                                 </Slider>
 
-                                <Slider {...productDetailsSmallImg} className='sliderSmall'>
-                                    <div className='item'>
+                                <Slider {...productDetailsSmallImg} ref={productSliderSml} className='sliderSmall'>
+                                    <div className='item' onClick={() => goToSlide(0)}>
                                         <img src={productDetailsImg1} className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(1)}>
                                         <img src={productDetailsImg2} className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(2)}>
                                         <img src={productDetailsImg3} className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(3)}>
                                         <img src={productDetailsImg4} className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(4)}>
+                                        <img src={productDetailsImg5} className='w-100' />
+                                    </div>
+                                    <div className='item' onClick={() => goToSlide(5)}>
+                                        <img src={productDetailsImg5} className='w-100' />
+                                    </div>
+                                    <div className='item' onClick={() => goToSlide(6)}>
+                                        <img src={productDetailsImg5} className='w-100' />
+                                    </div>
+                                    <div className='item' onClick={() => goToSlide(7)}>
                                         <img src={productDetailsImg5} className='w-100' />
                                     </div>
                                 </Slider>
@@ -307,7 +348,7 @@ export const ProductDetails = () => {
                                 </div>
                                 <div className='col2 mx-2'>
                                     <div class="progress" style={{ height: "30px" }}>
-                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "85%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">85%</div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "85%", color: "black", fontWeight: "bold" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">85%</div>
                                     </div>
                                 </div>
                                 <div className='col3'>
@@ -321,7 +362,7 @@ export const ProductDetails = () => {
                                 </div>
                                 <div className='col2 mx-2'>
                                     <div class="progress" style={{ height: "30px" }}>
-                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "74%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">74%</div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "74%", color: "black", fontWeight: "bold" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">74%</div>
                                     </div>
                                 </div>
                                 <div className='col3'>
@@ -335,7 +376,7 @@ export const ProductDetails = () => {
                                 </div>
                                 <div className='col2 mx-2'>
                                     <div class="progress" style={{ height: "30px" }}>
-                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "69%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">69%</div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "69%", color: "black", fontWeight: "bold" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">69%</div>
                                     </div>
                                 </div>
                                 <div className='col3'>
@@ -349,7 +390,7 @@ export const ProductDetails = () => {
                                 </div>
                                 <div className='col2 mx-2'>
                                     <div class="progress" style={{ height: "30px" }}>
-                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "45%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45%</div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "45%", color: "black", fontWeight: "bold" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">45%</div>
                                     </div>
                                 </div>
                                 <div className='col3'>
@@ -363,7 +404,7 @@ export const ProductDetails = () => {
                                 </div>
                                 <div className='col2 mx-2'>
                                     <div class="progress" style={{ height: "30px" }}>
-                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "15%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">15%</div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style={{ width: "15%", color: "black", fontWeight: "bold" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">15%</div>
                                     </div>
                                 </div>
                                 <div className='col3'>
@@ -667,6 +708,16 @@ export const ProductDetails = () => {
 
                             </div>
                         </div>
+
+                        <br />
+                        <h5 className='mt-4 mb-4'>Review Reply Form</h5>
+                        <form className='reviewForm'>
+                            <textarea placeholder='Write Here'>
+
+                            </textarea>
+                            <Button className='btn-blue btn-lg'>Drop Your Reply</Button>
+                        </form>
+
                     </div>
 
 
@@ -674,6 +725,7 @@ export const ProductDetails = () => {
 
 
                 </div>
+
             </div>
         </div>
     )
