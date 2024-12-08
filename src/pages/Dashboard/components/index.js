@@ -31,7 +31,7 @@ const DashBoardBox = (props) => {
             }
 
 
-            <div className="d-flex w-100 justify-content-between align-items-center">
+            <div className="d-flex w-100 justify-content-between align-items-center ">
                 <div className="col1">
                     <h4 className="text-white mb-0">{userdetails}</h4>
                     <span className="user text-white">{userNo}</span>
@@ -47,7 +47,8 @@ const DashBoardBox = (props) => {
             <div className="d-flex align-items-center justify-content-between w-100 bottomElem">
                 <h6 className="text-white mb-0 mt-0">Last Month</h6>
                 <div className="ml-auto">
-                    <Button className="ml-auto toggleIcon" onClick={handleClick}> <HiDotsVertical /></Button>
+                    <Button className="ml-auto  toggleIcon" onClick={handleClick}> <HiDotsVertical /></Button>
+                    
                     <Menu
                         id="long-menu"
                         MenuListProps={{

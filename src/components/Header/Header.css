@@ -75,6 +75,9 @@ header .rounded-circle:hover {
     text-align: left;
 }
 
+.myAccWrapper a{
+    text-decoration: none !important;
+}
 .userImg {
     display: flex;
     align-items: center;
@@ -108,6 +111,10 @@ body.dark .userImg {
 body.dark .myAcc,
 body.dark .myAcc .userInfo p {
     color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.userOneIcon {
+    display: none;
 }
 
 .userImg .userLogo {
@@ -231,3 +238,126 @@ body.dark li.MuiButtonBase-root:hover {
         color: blue;
     }
 }
+
+
+/* start responsive code for mobile device */
+
+
+
+@media only screen and (max-width: 720px) {
+
+    header {
+        height: 50px !important;
+    }
+
+    header .logo {
+        width: 30px;
+    }
+
+    header .logo span {
+        font-weight: 700;
+        font-size: 22px;
+        margin-left: 4px !important;
+    }
+
+    .part1 {
+        width: 20% !important;
+    }
+
+    .part2 {
+        width: 25% !important;
+        padding-left: 65px !important;
+    }
+
+    .part3 {
+        width: 55% !important;
+    }
+
+    .serchBoxSection {
+        display: none !important;
+    }
+
+
+    header .rounded-circle {
+        min-width: 35px !important;
+        height: 35px !important;
+        width: 35px !important;
+        background-color: #f0f5ff;
+        color: #292929;
+        margin-right: 10px !important;
+    }
+
+    .myAccWrapper .userInfo {
+
+        & h4 {
+            font-size: 13px !important;
+        }
+
+        & p {
+            font-size: 10px !important;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
+    .part1 {
+        margin-left: -15px !important;
+    }
+
+    .part2 {
+        width: 25% !important;
+        padding-left: 40px !important;
+        margin-left: 10px !important;
+    }
+
+    .part3 {
+        width: 55% !important;
+        margin-left: 5px !important;
+
+    }
+
+
+    header .rounded-circle {
+        min-width: 35px !important;
+        height: 35px !important;
+        width: 35px !important;
+        background-color: #f0f5ff;
+        color: #292929;
+        margin-right: 8px !important;
+    }
+
+    .userOneIcon {
+        display: block !important;
+    }
+
+    .userTwoDetails {
+        display: none !important;
+    }
+
+
+}
+
+@media only screen and (max-width: 380px) {
+
+    header .logo span {
+        font-weight: 600;
+        font-size: 20px;
+        margin-left: 4px !important;
+    }
+
+
+
+
+    .part2 {
+        width: 20% !important;
+    }
+
+    .part3 {
+        width: 60% !important;
+    }
+}
+
+
+/* end responsive code for mobile device */

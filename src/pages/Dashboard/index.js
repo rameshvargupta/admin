@@ -20,6 +20,7 @@ import Rating from '@mui/material/Rating';
 import Pagination from '@mui/material/Pagination';
 import { MyContext } from "../../App";
 import { Link } from "react-router-dom";
+import userImgData from '../../assets/product1.jpg'
 
 
 export const data = [
@@ -66,14 +67,15 @@ const DashBoard = () => {
     <div className="right-content">
 
       <div>
+
         <div className="row">
 
-          <div className="col-md-7">
+          <div className="col-md-7 mb-3">
             <div className="dashboardBoxWrapper">
               <DashBoardBox color={["#1da256", "#48d483"]} icon={FaUserCircle} userdetails="Total User" userNo="1256" grow={true} />
               <DashBoardBox color={["#c012e2", "#eb64fe"]} icon={FaCartArrowDown} userdetails="Total Order" userNo="485" />
               <DashBoardBox color={["#2c78e5", "#60aff5"]} icon={FaShoppingBag} userdetails="Total Products" userNo="98" />
-              <DashBoardBox color={["#e1950e", "#f3cd29"]} icon={GiStarsStack} userdetails="Total Reviews" userNo="1456" />
+              <DashBoardBox color={["#e1950e", "#f3cd29"]} icon={GiStarsStack} userdetails="Total Reviews" userNo="1456" grow={true} />
 
 
             </div>
@@ -207,7 +209,7 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
+                      <img src={userImgData} />
                     </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
@@ -231,7 +233,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                   <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -243,7 +245,8 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
+                      <img src={userImgData} />
+
                     </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
@@ -267,7 +270,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -279,8 +282,7 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                    <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -303,7 +305,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -315,8 +317,7 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                    <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -339,7 +340,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -351,8 +352,7 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                    <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -375,7 +375,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -387,8 +387,7 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                    <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -411,7 +410,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -423,8 +422,7 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                    <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -447,7 +445,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -459,8 +457,7 @@ const DashBoard = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                    <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -483,7 +480,7 @@ const DashBoard = () => {
                 <td>
 
                   <div className="tableActions d-flex align-items-center justify-content-center">
-                  <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
+                    <Link to={"/productDetails"}> <Button className="secondary" color="secondary"><IoMdEye /></Button></Link>
                     <Button className="success" color="success"><FaPencilAlt /></Button>
                     <Button className="error" color="error"><MdDelete /></Button>
                   </div>
@@ -500,8 +497,11 @@ const DashBoard = () => {
 
       <div className="peginationSection d-flex justify-space-between align-items-center">
         <p >show <b>12</b> of <b>20</b> result</p>
-        <div><Pagination count={10} color="primary" showFirstButton showLastButton /></div>
+        <div className="pagination">
+          <Pagination count={10} color="primary" showFirstButton showLastButton />
+        </div>
       </div>
+
     </div>
   )
 }

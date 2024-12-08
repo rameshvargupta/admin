@@ -11,30 +11,33 @@ import Rating from '@mui/material/Rating';
 import { Link } from 'react-router-dom';
 import './Products.css';
 import { MyContext } from '../../App';
+import userImgData from '../../assets/product1.jpg';
+import Pagination from '@mui/material/Pagination';
+
 
 export const Products = () => {
 
   const context = useContext(MyContext);
   const StyledBreadcrumb = styled(Chip)(({ theme }) => {
 
-      const isLightMode = context.themeMode; // Assuming `themeMode` is true for light mode
-      const backgroundColor = isLightMode ? theme.palette.grey[100] : "#071739";
-      const textColor = isLightMode ? theme.palette.text.primary : theme.palette.text.secondary;
+    const isLightMode = context.themeMode; // Assuming `themeMode` is true for light mode
+    const backgroundColor = isLightMode ? theme.palette.grey[100] : "#071739";
+    const textColor = isLightMode ? theme.palette.text.primary : theme.palette.text.secondary;
 
-      return {
-          backgroundColor,
-          height: theme.spacing(3),
-          color: theme.palette.text.primary,
-          fontWeight: theme.typography.fontWeightRegular,
-          padding: '7px 8px',
-          '&:hover, &:focus': {
-              backgroundColor: emphasize(backgroundColor, 0.06),
-          },
-          '&:active': {
-              boxShadow: theme.shadows[1],
-              backgroundColor: emphasize(backgroundColor, 0.12),
-          },
-      };
+    return {
+      backgroundColor,
+      height: theme.spacing(3),
+      color: theme.palette.text.primary,
+      fontWeight: theme.typography.fontWeightRegular,
+      padding: '7px 8px',
+      '&:hover, &:focus': {
+        backgroundColor: emphasize(backgroundColor, 0.06),
+      },
+      '&:active': {
+        boxShadow: theme.shadows[1],
+        backgroundColor: emphasize(backgroundColor, 0.12),
+      },
+    };
   });
 
 
@@ -46,13 +49,13 @@ export const Products = () => {
         <h4 className='mb-0 px-3'>Product List</h4>
 
         <Breadcrumbs aria-label="breadcrumb">
-          <StyledBreadcrumb
+          <Link to={"/"}> <StyledBreadcrumb
             component="a"
             href="#"
             label="Home"
             icon={<HomeIcon fontSize="small" />}
-          />
-          <StyledBreadcrumb component="a" href="#" label="Products List" />
+          /></Link>
+          <Link to={"/products"}>  <StyledBreadcrumb component="a" href="#" label="Products List" /></Link>
         </Breadcrumbs>
       </div>
 
@@ -80,7 +83,7 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
+                      <img src={userImgData} />
                     </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
@@ -116,7 +119,8 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
+                      <img src={userImgData} />
+
                     </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
@@ -152,8 +156,7 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                      <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -188,8 +191,7 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                      <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -224,8 +226,7 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                      <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -260,8 +261,7 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                      <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -296,8 +296,7 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                      <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -332,8 +331,7 @@ export const Products = () => {
 
                   <div className="imageInfo d-flex align-items-center">
                     <div className="img">
-                      <img src="https://res.cloudinary.com/dkgonwhvj/image/upload/v1731423938/1731423936260_closwif-mens-polo-neck-solid-shirt-regular-fit-full-length-sleeve-shirt-shirt-for-mens-mens-shirt-mens-shirt-partywear-shirts-for-mens-shirts-shirts-casual-shirt-product-images-rvyj3dsm7i-0-202407121653.jpg" />
-                    </div>
+                      <img src={userImgData} />                    </div>
                     <div className="imgDetails">
                       <h6>Jobayed Hossain</h6>
                       <p>Lorem Ipsum is simp Lorem Ipsum is simp</p>
@@ -368,6 +366,13 @@ export const Products = () => {
 
 
         </div>
+
+        <div className="peginationSection d-flex justify-space-between align-items-center">
+        <p >show <b>12</b> of <b>20</b> result</p>
+        <div className="pagination">
+          <Pagination count={10} color="primary" showFirstButton showLastButton />
+        </div>
+      </div>
       </div>
 
     </div>

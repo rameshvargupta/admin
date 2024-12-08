@@ -56,14 +56,14 @@ export const ProductUpload = () => {
             <div className="cardDetails shadow border-0 p-3 mt-3 d-flex justify-content-between align-items-center">
                 <h4 className='mb-0 px-3'>Product Upload</h4>
                 <Breadcrumbs aria-label="breadcrumb">
-                    <StyledBreadcrumb
+                    <Link to={"/"}> <StyledBreadcrumb
                         component="a"
                         href="#"
                         label="Home"
                         icon={<HomeIcon fontSize="small" />}
-                    />
-                    <StyledBreadcrumb component="a" href="#" label="Products" />
-                    <StyledBreadcrumb component="a" href="#" label="Products Upload" />
+                    /></Link>
+                    <Link to={"/products"}> <StyledBreadcrumb component="a" href="#" label="Products" /></Link>
+                    <Link to={"/product/upload"}>   <StyledBreadcrumb component="a" href="#" label="Products Upload" /></Link>
                 </Breadcrumbs>
             </div>
 
@@ -194,7 +194,7 @@ export const ProductUpload = () => {
                         </div>
 
                         <div>
-                            <Button className="btn-blue btn-lg"><span className='uploadIcon'><FaCloudUploadAlt/></span> PUBLISH & VIEW</Button>
+                            <Button className="btn-blue btn-lg"><span className='uploadIcon'><FaCloudUploadAlt /></span> PUBLISH & VIEW</Button>
                         </div>
 
 

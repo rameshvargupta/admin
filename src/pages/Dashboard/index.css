@@ -95,7 +95,12 @@ body.dark .right-content .cardDetails .selectSection {
     color: #403e57 !important;
     margin-bottom: 7px !important;
 }
-
+.table-responsive{
+    overflow-y: scroll !important;
+}
+.table-responsive::-webkit-scrollbar {
+   height: 2px !important;
+  }
 .right-content .table th {
     background-color: #2a6ff7 !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
@@ -104,7 +109,8 @@ body.dark .right-content .cardDetails .selectSection {
     text-align: center;
 }
 
-body.dark .right-content .table th, body.dark .right-content .table tbody td {
+body.dark .right-content .table th,
+body.dark .right-content .table tbody td {
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 
 }
@@ -166,11 +172,16 @@ body.dark .right-content .table td {
     margin-bottom: 5px !important;
 }
 
-.right-content .table tbody .imageInfo img {
-    width: 100%;
-    height: 60px;
+.right-content .table tbody .imageInfo .img {
+    width: 150px !important;
+    height: 80px !important;
     border-radius: 10px;
     overflow: hidden;
+}
+.right-content .table tbody .imageInfo .img img{
+height: 100% !important;
+width: 100% !important;
+object-fit: cover !important;
 }
 
 .right-content .table tbody .imageInfo .imgDetails {
@@ -191,9 +202,30 @@ body.dark .right-content .table td {
         font-weight: 500;
     }
 }
-body.dark .right-content .peginationSection *{
+
+body.dark .right-content .peginationSection * {
     color: #fff !important;
-    & b{
+
+    & b {
         color: #2a6ff7 !important;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .right-content {
+        padding: 0px !important;
+    }
+
+    .right-content .cardDetails {
+        margin: 10px 0px !important;
+        padding: 10px !important;
+    }
+
+    .right-content .cardDetails h3 {
+        margin: 0px 10px !important;
+    }
+    .peginationSection{
+        display: flex;
+        flex-direction: column !important;
     }
 }

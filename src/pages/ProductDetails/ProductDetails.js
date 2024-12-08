@@ -24,6 +24,7 @@ import Rating from '@mui/material/Rating';
 import { Button } from '@mui/material';
 import { FaReply } from "react-icons/fa";
 import { MyContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 
 export const ProductDetails = () => {
@@ -76,24 +77,28 @@ export const ProductDetails = () => {
         };
     });
 
+
+
+
+
     return (
         <div>
 
-            <div className="right-content">
+            <div className="right-content productDetails">
 
                 <div className="cardDetails shadow border-0 p-3 mt-3 d-flex justify-content-between align-items-center">
                     <h4 className='mb-0 px-3'>Product View</h4>
 
                     <Breadcrumbs aria-label="breadcrumb">
-                        <StyledBreadcrumb
+                        <Link to={"/"}><StyledBreadcrumb
                             component="a"
                             href="#"
                             label="Home"
                             icon={<HomeIcon fontSize="small" />
                             }
-                        />
-                        <StyledBreadcrumb component="a" href="#" label="Products" />
-                        <StyledBreadcrumb component="a" href="#" label="Products View" />
+                        /></Link>
+                        <Link to={"/products"}><StyledBreadcrumb component="a" href="#" label="Products" /></Link>
+                        <Link to={"/product/details"}><StyledBreadcrumb component="a" href="#" label="Products View" /></Link>
 
 
 
@@ -103,7 +108,7 @@ export const ProductDetails = () => {
                 <div className="productDetailsSection cardDetails shadow border-0">
                     <div className='row'>
                         <div className='col-md-5'>
-                            <div className='sliderWrapper py-3 px-4'>
+                            <div className='sliderWrapper py-2 px-2'>
                                 <h5 className='mb-4'>Product Gallery</h5>
                                 <Slider {...productDetailsBigImg} ref={productSliderBig} className='sliderBig mb-2'>
                                     <div className='item'>
@@ -162,42 +167,42 @@ export const ProductDetails = () => {
                         </div>
 
                         <div className='col-md-7'>
-                            <div className='py-3 px-4'>
-                                <h5 className='mb-4 '>Product Details</h5>
-                                <h4>Formla suites for men slim fit 3 piece dress business party jocket</h4>
+                            <div className='py-3 px-2'>
+                                <h5 className='mb-2 '>Product Details</h5>
+                                <h6>Formla suites for men slim fit 3 piece dress business party jocket</h6>
 
 
-                                <div className='productInfo mt-4'>
+                                <div className='productInfo mt-3'>
                                     <div className='row'>
 
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><MdOutlineBrandingWatermark /></span>
                                             <span className='name'>Brand</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span className='value'>Estaty</span>
                                         </div>
                                     </div>
 
                                     <div className='row '>
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><MdCategory /></span>
                                             <span className='name'>Category</span>
                                         </div>
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span className='value'>Man's</span>
                                         </div>
 
                                     </div>
 
                                     <div className='row'>
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><IoIosColorPalette /></span>
                                             <span className='name'>Color</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span>
                                                 <ul className='list list-inline tags'>
                                                     <li className='list-inline-item'>
@@ -222,12 +227,12 @@ export const ProductDetails = () => {
                                     </div>
 
                                     <div className='row'>
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><FaTag /></span>
                                             <span className='name'>Tag</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span>
                                                 <ul className='list list-inline tags'>
                                                     <li className='list-inline-item'>
@@ -252,12 +257,12 @@ export const ProductDetails = () => {
                                     </div>
 
                                     <div className='row'>
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><SlSizeActual /></span>
                                             <span className='name'>Size</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span>
                                                 <ul className='list list-inline tags'>
                                                     <li className='list-inline-item'>
@@ -283,47 +288,47 @@ export const ProductDetails = () => {
 
                                     <div className='row'>
 
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><MdOutlinePriceChange /></span>
                                             <span className='name'>Price</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span ><b>$24.00</b> <u className='text-danger' style={{ textDecoration: "none" }}>$45.00</u></span>
                                         </div>
                                     </div>
 
                                     <div className='row'>
 
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><MdReviews /></span>
                                             <span className='name'>Stock</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span>(68) Pices</span>
                                         </div>
                                     </div>
 
                                     <div className='row'>
 
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><AiOutlineStock /></span>
                                             <span className='name'>Review</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span>(12) Review</span>
                                         </div>
                                     </div>
                                     <div className='row'>
 
-                                        <div className='col-sm-3 d-flex align-items-center'>
+                                        <div className='.productDetailsSection .productInfo part1'>
                                             <span className='icon '><MdOutlinePublishedWithChanges /></span>
                                             <span className='name'>Published</span>
                                         </div>
 
-                                        <div className='col-sm-9'>
+                                        <div className='col-sm-9 part2'>
                                             :<span>11 Dec 2024</span>
                                         </div>
                                     </div>
@@ -332,8 +337,8 @@ export const ProductDetails = () => {
                         </div>
                     </div>
 
-                    <div className='p-4'>
-                        <h5 className='mt-4 mb-3'>Product Decription</h5>
+                    <div className='px-3'>
+                        <h5 className='mt-2 mb-3'>Product Decription</h5>
                         <p> ipsum dolor sit amet consectetur adipisicing elit. Unde sunt numquam, quia nam, veritatis itaque suscipit possimus ipsa fuga earum ea similique delectus quos, libero dolorem dolores illum ex molestias iure vel fugit! In itaque recusandae iure tempore eum nobis rem id aperiam voluptas. Quam amet odio numquam cupiditate aliquam eius quasi voluptatum soluta minima minus, dicta saepe facilis facere cumque deserunt at ipsam eaque iure fugiat dolorem dolores repellendus. Dolore provident beatae ratione. Dignissimos optio voluptates deserunt quis harum debitis voluptatem nesciunt pariatur, culpa hic nisi rem perferendis quam esse modi sed maiores laborum aliquam! Dolores, modi iure exercitationem ipsum vitae consequuntur cum excepturi accusamus beatae assumenda sapiente facilis saepe nostrum maiores reiciendis aut iste blanditiis corporis ipsam dolorum aspernatur sint. Atque voluptatum expedita ea, labore voluptatem reiciendis quisquam nam vero aliquam dolorem error accusantium ipsum corrupti iste est officiis maxime placeat ipsam beatae quaerat itaque recusandae! Qui, harum.</p>
 
 
@@ -413,7 +418,7 @@ export const ProductDetails = () => {
                             </div>
                         </div>
 
-                        <h5 className='mt-4 mb-4'>Customer Reviews</h5>
+                        <h5 className='mt-3 mb-4'>Customer Reviews</h5>
 
                         <div className='reviewSection'>
                             <div className='reviewRow'>
@@ -432,16 +437,17 @@ export const ProductDetails = () => {
                                             </div>
                                         </div>
 
-                                        <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
+                                        <Rating name="half-rating-read " defaultValue={4.5} precision={0.5} readOnly />
 
 
                                     </div>
 
-                                    <div className='col-sm-2'>
+                                    <div className='col-sm-2 replyBtn'>
                                         <div>
                                             <Button className='btn-blue btn-lg '> <span className='mx-2'><FaReply /></span> Reply</Button>
                                         </div>
                                     </div>
+
                                     <p>ipsum dolor sit amet consectetur adipisicing elit. Unde sunt numquam, quia nam, veritatis itaque suscipit possimus ipsa fuga earum ea similique delectus quos, libero dolorem dolores illum ex molestias iure vel fugit! In itaque recusandae iure tempore eum nobis rem id aperiam voluptas. Quam </p>
                                 </div>
                                 <div className='row'>
@@ -709,7 +715,6 @@ export const ProductDetails = () => {
                             </div>
                         </div>
 
-                        <br />
                         <h5 className='mt-4 mb-4'>Review Reply Form</h5>
                         <form className='reviewForm'>
                             <textarea placeholder='Write Here'>

@@ -15,7 +15,7 @@ const MyContext = createContext();
 
 function App() {
   const [isSidebarToggle, setIsSidebarToggle] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const [isHideHeaderandSidebar, setisHideHeaderandSidebar] = useState(false);
   const [themeMode, setThemeMode] = useState(true);
 

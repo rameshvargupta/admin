@@ -24,27 +24,29 @@ body {
 
 .main .sideWrapper .sidebar {
   width: 20%;
-  height: 100vh;
+  height: 110vh;
   position: fixed;
   top: 70px;
   left: 0px;
   background-color: #fff;
   overflow-y: scroll;
-  max-height: calc(100%-70px);
-  padding-bottom: 20px !important;
+  max-height: calc(100%-10px);
+  height: 100% !important;
+  padding-bottom: 30px !important;
 }
 
 
 
 .main .content {
-  width: 80%;
-  flex: 0 0 80%;
+  width: 80% !important;
+  flex: 0 0 80% !important;
   transition: all 0.3s ease-in-out;
 }
 
 .main .content.toggleWrapper {
   width: 100% !important;
   flex: 0 0 100% !important;
+
 }
 
 .main .content .right-content {
@@ -53,9 +55,10 @@ body {
   top: 70px;
   right: 0px;
   background-color: #fff;
-  overflow-y: scroll;
   max-height: calc(100%-70px);
   padding-bottom: 20px !important;
+  width: 100% !important;
+  overflow: hidden !important;
 }
 
 .main .sideWrapper .sidebar::-webkit-scrollbar-thumb {
@@ -95,3 +98,160 @@ h5.h6 {
   flex: 0 0 100% !important;
   width: 100% !important;
 }
+
+/*start responsive section */
+
+@media only screen and (max-width: 780px) {
+  .main .sideWrapper {
+    width: 40% !important;
+    flex: 0 0 40% !important;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    position: fixed;
+    display: none !important;
+
+  }
+
+  .main .sideWrapper.toggleWrapper {
+    width: 0% !important;
+    flex: 0 0 0% !important;
+    display: block !important;
+    z-index: 10000;
+  }
+
+
+  .main .sideWrapper .sidebar {
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    left: 0px;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding-bottom: 20px !important;
+  }
+
+
+
+  .main .content {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .main .content .right-content {
+    height: 100%;
+    position: relative;
+    top: 70px;
+    right: 0px;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding-bottom: 20px !important;
+  }
+
+
+}
+
+@media only screen and (max-width: 580px) {
+  .main .sideWrapper {
+    width: 40% !important;
+    flex: 0 0 40% !important;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    position: fixed;
+    display: none !important;
+
+  }
+
+  .main .sideWrapper.toggleWrapper {
+    width: 0% !important;
+    flex: 0 0 0% !important;
+    display: block !important;
+    z-index: 10000;
+  }
+
+
+  .main .sideWrapper .sidebar {
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    left: 0px;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding-bottom: 20px !important;
+  }
+
+
+
+  .main .content {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .main .content .right-content {
+    height: 100%;
+    position: relative;
+    top: 70px;
+    right: 0px;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding-bottom: 20px !important;
+  }
+
+
+}
+@media only screen and (max-width: 400px) {
+  .main .sideWrapper {
+    width: 55% !important;
+    flex: 0 0 55% !important;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    position: fixed;
+    display: none !important;
+
+  }
+
+  .main .sideWrapper.toggleWrapper {
+    width: 0% !important;
+    flex: 0 0 0% !important;
+    display: block !important;
+    z-index: 10000;
+  }
+
+
+  .main .sideWrapper .sidebar {
+    width: 55%;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    left: 0px;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding-bottom: 20px !important;
+  }
+
+
+
+  .main .content {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .main .content .right-content {
+    height: 100%;
+    position: relative;
+    top: 70px;
+    right: 0px;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding-bottom: 20px !important;
+  }
+
+
+}
+
+
+/*end responsive section */

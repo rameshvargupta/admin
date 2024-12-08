@@ -6,8 +6,6 @@ import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { Button } from '@mui/material';
 import SearchBox from '../SearchBox/SearchBox';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import userlogo from '../../assets/images/user.png';
 import Menu from '@mui/material/Menu';
@@ -20,7 +18,7 @@ import { MyContext } from '../../App';
 import MenuIcon from '@mui/icons-material/Menu';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { UserAvatarImg, UserImg } from '../UserAvatarImg/UserAvatarImg';
-
+import PersonIcon from '@mui/icons-material/Person';
 
 export const Header = () => {
 
@@ -55,7 +53,7 @@ export const Header = () => {
                     <div className='col-sm-2 part1'>
                         <Link to={'/'} className='logo d-flex align-items-center'>
                             <img src={mainLogo} className='w-100' alt="Main Logo" />
-                            <span>Ecommerce</span>
+                            <span>Avatar</span>
                         </Link>
                     </div>
 
@@ -64,13 +62,11 @@ export const Header = () => {
                             {context.isSidebarToggle === true ? <MenuIcon /> : <MenuOpenIcon />}
 
                         </Button>
-                        <SearchBox />
+                        <span className='serchBoxSection'><SearchBox /></span>
                     </div>
 
                     <div className='col-sm-7 d-flex align-items-center part3 justify-content-end'>
                         <Button onClick={() => context.setThemeMode(!context.themeMode)} className='rounded-circle'>{!context.themeMode == false ? <LightModeIcon /> : <DarkModeIcon />}</Button>
-                        <Button className='rounded-circle'><ShoppingCartOutlinedIcon /></Button>
-                        <Button className='rounded-circle'><EmailOutlinedIcon /></Button>
 
                         {/* Notification button with dropdown */}
                         <div>
@@ -221,6 +217,7 @@ export const Header = () => {
                                         </div>
                                     </MenuItem>
                                 </div>
+
                                 <div className='px-2 mt-1'>
                                     <Button className='btnBlue'>View all notification</Button>
                                 </div>
@@ -231,38 +228,47 @@ export const Header = () => {
                         {context.isLogin !== true ?
                             <Link to={'/login'}> <Button className='btn-blue btn-lg'>Sign In</Button></Link>
                             :
-                            < div className='myAccWrapper'>
-                                <Button onClick={handleOpenProfile} className='myAcc d-flex align-items-center'>
-                                    <UserAvatarImg />
-                                    <div className='userInfo'>
-                                        <h4>Rameshvar Gupta</h4>
-                                        <p>rameshvar@gmail.com</p>
-                                    </div>
-                                </Button>
+                            <span>
 
+                                < div className='myAccWrapper'>
+                                    <Button onClick={handleOpenProfile} className='myAcc d-flex align-items-center userTwoDetails'>
+                                        <UserAvatarImg />
+                                        <div className='userInfo'>
+                                            <h4>Rameshvar Gupta</h4>
+                                            <p>rameshvar@gmail.com</p>
+                                        </div>
+                                    </Button>
 
-                                <Menu
-                                    anchorEl={profileAnchorEl}
-                                    id="account-menu"
-                                    open={profileOpen}
-                                    onClose={handleCloseProfile}
-                                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                                >
-                                    <MenuItem onClick={handleCloseProfile}>
-                                        <ListItemIcon><PersonAdd fontSize="small" /></ListItemIcon>
-                                        My Account
-                                    </MenuItem>
-                                    <MenuItem onClick={handleCloseProfile}>
-                                        <ListItemIcon><LockResetOutlinedIcon fontSize="small" /></ListItemIcon>
-                                        Reset Password
-                                    </MenuItem>
-                                    <MenuItem onClick={handleCloseProfile}>
-                                        <ListItemIcon><Logout fontSize="small" /></ListItemIcon>
-                                        Logout
-                                    </MenuItem>
-                                </Menu>
-                            </div>
+                                    <span className='userOneIcon'>  <Button onClick={handleOpenProfile} className='rounded-circle '>
+                                        <PersonIcon />
+                                    </Button>
+                                    </span>
+
+                                    <Menu
+                                        anchorEl={profileAnchorEl}
+                                        id="account-menu"
+                                        open={profileOpen}
+                                        onClose={handleCloseProfile}
+                                        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                                        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                        style={{textDecoration:"none",color:"#000"}}
+                                    >
+                                        <MenuItem onClick={handleCloseProfile}>
+                                            <ListItemIcon><PersonAdd fontSize="small" /></ListItemIcon>
+                                            My Account
+                                        </MenuItem>
+                                        <MenuItem onClick={handleCloseProfile}>
+                                            <ListItemIcon><LockResetOutlinedIcon fontSize="small" /></ListItemIcon>
+                                            Reset Password
+                                        </MenuItem>
+                                        <Link to={'/login'}>  <MenuItem onClick={handleCloseProfile}>
+                                            <ListItemIcon><Logout fontSize="small" /></ListItemIcon>
+                                            Logout
+                                        </MenuItem>
+                                        </Link>
+                                    </Menu>
+                                </div>
+                            </span>
                         }
 
 
