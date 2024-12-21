@@ -5,7 +5,6 @@ import { MdDashboard } from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaProductHunt } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
 import { MdCategory } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { IoMdLogOut } from "react-icons/io";
@@ -64,7 +63,7 @@ export const Sidebar = () => {
                     <div className={`subMenuWrapper ${activeTab === 2 && subMenu === true ? "showSubMenu" : "hideSubMenu"}`}>
                         <ul className='subMenu'>
                             <li><Link to={'/'}>Category List</Link></li>
-                            <li><Link to={'/'}>Add a category</Link></li>
+                            <li><Link to={'/category/add'}>Add a category</Link></li>
                             <li><Link to={'/'}>Sub Category List</Link></li>
                         </ul>
                     </div>

@@ -9,6 +9,7 @@ import { SignUp } from './pages/SignUp/SignUp';
 import { ProductDetails } from './pages/ProductDetails/ProductDetails';
 import { ProductUpload } from './pages/ProductUpload/ProductUpload';
 import { Products } from './pages/Products/Products';
+import { CategoryAdd } from './pages/CategoryAdd/CategoryAdd';
 
 
 const MyContext = createContext();
@@ -59,6 +60,7 @@ function App() {
               <Route path='/products' element={<Products />} />
               <Route path='/product/details' element={<ProductDetails />} />
               <Route path='/product/upload' element={<ProductUpload />} />
+              <Route path='category/add' element={<CategoryAdd />} />
             </Routes>
           </div>
 
