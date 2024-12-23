@@ -53,7 +53,7 @@ export const ProductUpload = () => {
     return (
         <div className="right-content">
 
-            <div className="cardDetails shadow border-0 p-3 mt-3 d-flex justify-content-between align-items-center">
+            <div className="cardDetails shadow border-0 p-3 d-flex justify-content-between align-items-center">
                 <h4 className='mb-0 px-3'>Product Upload</h4>
                 <Breadcrumbs aria-label="breadcrumb">
                     <Link to={"/"}> <StyledBreadcrumb

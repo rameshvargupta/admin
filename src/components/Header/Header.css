@@ -35,6 +35,9 @@ body.dark header .logo span {
 header .part2 {
     padding-left: 50px !important;
 }
+.UserDetailsList{
+color: #292929 !important;
+}
 
 header .rounded-circle {
     min-width: 45px !important;

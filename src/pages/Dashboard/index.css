@@ -1,5 +1,6 @@
 .right-content {
     padding: 25px 15px;
+    background-color: #e3e3e398 !important;
 }
 
 body.dark .right-content {
@@ -65,8 +66,10 @@ body.dark .right-content {
 
 
 .right-content .cardDetails {
-    margin: 20px 12px !important;
+    margin: 15px 12px !important;
     border-radius: 10px !important;
+    background-color: white !important;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
 }
 
 body.dark .right-content .cardDetails {

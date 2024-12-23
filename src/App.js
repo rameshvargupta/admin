@@ -10,6 +10,7 @@ import { ProductDetails } from './pages/ProductDetails/ProductDetails';
 import { ProductUpload } from './pages/ProductUpload/ProductUpload';
 import { Products } from './pages/Products/Products';
 import { CategoryAdd } from './pages/CategoryAdd/CategoryAdd';
+import { Category } from './pages/Category/Category';
 
 
 const MyContext = createContext();
@@ -61,6 +62,7 @@ function App() {
               <Route path='/product/details' element={<ProductDetails />} />
               <Route path='/product/upload' element={<ProductUpload />} />
               <Route path='category/add' element={<CategoryAdd />} />
+              <Route path='category' element={<Category />} />
             </Routes>
           </div>
 

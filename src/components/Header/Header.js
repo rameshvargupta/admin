@@ -255,7 +255,7 @@ export const Header = () => {
                                     >
                                         <MenuItem onClick={handleCloseProfile}>
                                             <ListItemIcon><PersonAdd fontSize="small" /></ListItemIcon>
-                                            My Account
+                                           <span className='UserDetailsList'> My Account</span>
                                         </MenuItem>
                                         <MenuItem onClick={handleCloseProfile}>
                                             <ListItemIcon><LockResetOutlinedIcon fontSize="small" /></ListItemIcon>
@@ -263,7 +263,7 @@ export const Header = () => {
                                         </MenuItem>
                                         <Link to={'/login'}>  <MenuItem onClick={handleCloseProfile}>
                                             <ListItemIcon><Logout fontSize="small" /></ListItemIcon>
-                                            Logout
+                                            <span className='UserDetailsList'> My Account</span>
                                         </MenuItem>
                                         </Link>
                                     </Menu>

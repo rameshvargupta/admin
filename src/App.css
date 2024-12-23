@@ -99,6 +99,30 @@ h5.h6 {
   width: 100% !important;
 }
 
+.error-text {
+  color: red;
+  font-size: 0.9em;
+}
+
+tbody.category {
+  & .img {
+width: 100% !important;
+height: 50px !important;
+  }
+  & img {
+width: 100% !important;
+height: 100% !important;
+object-fit: contain;
+  }
+
+}
+a{
+  text-decoration: none !important;
+}
+button .loader{
+  width: 25px !important;
+  height: 25px !important;
+}
 /*start responsive section */
 
 @media only screen and (max-width: 780px) {
@@ -202,6 +226,7 @@ h5.h6 {
 
 
 }
+
 @media only screen and (max-width: 400px) {
   .main .sideWrapper {
     width: 55% !important;

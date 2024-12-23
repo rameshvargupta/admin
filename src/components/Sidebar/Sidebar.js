@@ -62,7 +62,7 @@ export const Sidebar = () => {
 
                     <div className={`subMenuWrapper ${activeTab === 2 && subMenu === true ? "showSubMenu" : "hideSubMenu"}`}>
                         <ul className='subMenu'>
-                            <li><Link to={'/'}>Category List</Link></li>
+                            <li><Link to={'/category'}>Category List</Link></li>
                             <li><Link to={'/category/add'}>Add a category</Link></li>
                             <li><Link to={'/'}>Sub Category List</Link></li>
                         </ul>

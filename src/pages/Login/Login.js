@@ -75,10 +75,7 @@ export const Login = () => {
                                 <span className='line'></span>
                             </div>
 
-
-
-                            <Button variant='outlined' className='w-100 SignGoogle'><img src={googleImg} width={"40px"} /> Sign in with Google</Button>
-
+                         <Link to={'/'}> <Button variant='outlined' className='w-100 SignGoogle'><img src={googleImg} width={"40px"} /> Sign in with Google</Button></Link>  
 
                         </div>
                     </form>

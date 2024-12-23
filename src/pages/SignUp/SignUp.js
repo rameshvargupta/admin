@@ -109,7 +109,7 @@ export const SignUp = () => {
                             </div>
 
                             <div className='form-group'>
-                                <Button variant='outlined' className='w-100 SignGoogle'><img src={googleImg} width={"40px"} /> Sign in with Google</Button>
+                              <Link to={'/'}>  <Button variant='outlined' className='w-100 SignGoogle'><img src={googleImg} width={"40px"} /> Sign in with Google</Button></Link>
                             </div>
                         </form>
                     </div>

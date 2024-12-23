@@ -38,13 +38,33 @@ export const CategoryAdd = () => {
         colors: ""
     });
 
+    const [errors, setErrors] = useState({});
     const [successMessage, setSuccessMessage] = useState("");
+
+    const validate = () => {
+        const newErrors = {};
+        if (!formFields.name.trim()) newErrors.name = "Please fill in the category name.";
+        if (!formFields.colors.trim()) newErrors.colors = "Please fill in the color.";
+
+        // Validate image URL
+        const imageURL = formFields.images[0];
+        const urlRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|svg))$/i;
+        if (!imageURL?.trim()) {
+            newErrors.images = "Please provide an image URL.";
+        } else if (!urlRegex.test(imageURL)) {
+            newErrors.images = "Invalid image URL.";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0; // Returns true if no errors
+    };
 
     const changeInput = (e) => {
         setformFields(prevState => ({
             ...prevState,
             [e.target.name]: e.target.value
         }));
+        setErrors(prevErrors => ({ ...prevErrors, [e.target.name]: "" })); // Clear error
     };
 
     const addImgUrl = (e) => {
@@ -52,10 +72,12 @@ export const CategoryAdd = () => {
             ...prevState,
             images: [e.target.value]
         }));
+        setErrors(prevErrors => ({ ...prevErrors, images: "" })); // Clear error
     };
 
     const addCategory = async (e) => {
         e.preventDefault();
+        if (!validate()) return;
 
         try {
             const res = await postData("/api/category/create", formFields);
@@ -64,14 +86,14 @@ export const CategoryAdd = () => {
             setformFields({ name: "", images: [], colors: "" });
             setTimeout(() => {
                 setSuccessMessage("");
-            }, 5000);
+            }, 3500);
 
         } catch (error) {
             console.error("Error adding category:", error);
             setSuccessMessage("Failed to add category. Please try again.");
             setTimeout(() => {
                 setSuccessMessage("");
-            }, 5000);
+            }, 3500);
         }
     };
 
@@ -108,6 +130,7 @@ export const CategoryAdd = () => {
                                     value={formFields.name}
                                     onChange={changeInput}
                                 />
+                                {errors.name && <p className="error-text">{errors.name}</p>}
                             </div>
 
                             <div className='form-group'>
@@ -118,6 +141,7 @@ export const CategoryAdd = () => {
                                     value={formFields.images[0] || ""}
                                     onChange={addImgUrl}
                                 />
+                                {errors.images && <p className="error-text">{errors.images}</p>}
                             </div>
 
                             <div className='form-group'>
@@ -128,6 +152,7 @@ export const CategoryAdd = () => {
                                     value={formFields.colors}
                                     onChange={changeInput}
                                 />
+                                {errors.colors && <p className="error-text">{errors.colors}</p>}
                             </div>
                         </div>
 
@@ -150,4 +175,4 @@ export const CategoryAdd = () => {
             </div>
         </div>
     )
-}    
+};
